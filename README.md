@@ -41,9 +41,8 @@ Below are some requirements and recommendations:
 To get started, please clone the repo [here](https://github.com/cxnpl-au/recruitment).
 
 ### Submitting
-* Make your submission as a PR to the original repo
+* Make your submission as a PR to the main branch
 	* Under a new branch called  `submission/<your-email>`
-	* Source code should be in a new directory called `<your-email>`
 * Ensure you have included the written summary `README` that covers the above points
 
 Feel free to ask any questions, good luck!
