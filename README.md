@@ -21,14 +21,14 @@ Can perform all CRUD operations on users and datas according to bank (account nu
 Can view, create, update, and delete bank account number, addresses, and transaction details.
 Can view, create, update, and delete users.
 
-# Key decisions and tradeoffs you made in build
+# Key Decisions and Trade-Offs
 In my IM Service project, I strived to create a comprehensive solution that catered to the specific needs of different user roles. The project offered different functionality according to user’s role, viewing, updating, adding, and deleting information such as employee, customer and transaction details I had also incorporated the use of an AWS S3 bucket for seamless updates of user data (avatar).
 
 However, as time was a constraint this limited the scope of my project, and I ended up focusing on only delivering the core feature (RBAC). 
 
 The current implementation of the user interface was intentionally restricted to demonstrate specific actions. As such, there are opportunities for improvement in terms of UI design and functionality.
 
-# Areas of improvement in system
+# Areas of Improvement 
 While the project covers role definitions, restricted actions based on a user's role, admittedly the RBAC could be more granular. In banking, permissions to certain resources change often and the functionality to toggle permissions and/or granting them for a certain time period would be beneficial for larger organisations as well. An example of this would be contractor accounts or service accounts that teams would use specifically for one function. 
 
 I think the main area of improvement for the project was the lack of emphasis on business accounts. For the next iteration, It would be beneficial to revamp the database to include sub-organisations (as enterprise companies could have acquired smaller businesses) as well as and only allowing users to perform actions on data/users belonging to their organisation.
