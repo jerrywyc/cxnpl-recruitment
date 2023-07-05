@@ -8,6 +8,7 @@ import {
   Divider,
   Typography
 } from '@mui/material';
+import { AvatarDropzone } from './account-profile-avatar-dropzone';
 
 const user = {
   avatar: '/assets/avatars/avatar-anika-visser.png',
@@ -30,14 +31,17 @@ export const AccountProfile= () => {
             flexDirection: 'column'
           }}
         >
-          <Avatar
+                      {/* {console.log(MyInfor.avatar)} */}
+          {/* <Avatar
             src={MyInfor.avatar}
+
             sx={{
               height: 80,
               mb: 2,
               width: 80
             }}
-          />
+          /> */}
+          <AvatarDropzone />
           <Typography
             gutterBottom
             variant="h5"
@@ -63,8 +67,9 @@ export const AccountProfile= () => {
         <Button
           fullWidth
           variant="text"
+          disabled="true"
         >
-          Upload picture
+          Upload avatar by clicking image section
         </Button>
       </CardActions>
     </Card>
