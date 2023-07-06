@@ -6,30 +6,45 @@ const multer = require("multer")
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
+
+//swagger options
 const swaggerOptions = {
     definition: {
       openapi: '3.0.0',
       info: {
-        title: 'Your API Documentation',
+        title: 'IM Service API Documentation',
         version: '1.0.0',
-        description: 'API documentation for your MERN stack application',
+        description: 'API documentation for IM Service MERN stack application',
       },
+      servers:[
+        {
+          url:"http://localhost:5000"
+        },
+      ],
     },
-    apis: ['./path/to/your/annotated/api/files/*.js'],
+    apis: ['./server.js','./routes/api/users.js','./routes/api/customers.js','./routes/api/transaction.js'],
   };
   
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
 const app = express();
 
+//mongodb connect
 connectDB();
+
+//cors middleware
 app.use(cors())
 
 app.use(express.json({ extended: false }));
 
-app.get('/', (req, res) => res.send('API Running'));
+//app.get('/', (req, res) => res.send('API Running'));
 
+//swaggerUI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+
+// // Init swagger
+// require("./config/swagger").swagger_init(app, express);
 
 //* Define routes
 

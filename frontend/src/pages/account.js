@@ -4,6 +4,8 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { AccountProfile } from 'src/sections/account/account-profile';
 import { AccountProfileDetails } from 'src/sections/account/account-profile-details';
 
+
+//account component
 const Page = () => {
 
   return(
@@ -56,6 +58,8 @@ const Page = () => {
   )
 };
 
+
+// get layout of page
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}

@@ -23,6 +23,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BACKEND_URL } from 'src/Constant';
 import { addEmployees, addCustomers, addTransactions } from 'src/redux/action/information';
 
+//Login component
+
 const Page = () => {
   const dispatch = useDispatch();
   const {users} = useSelector(state=>state.users)
@@ -30,12 +32,14 @@ const Page = () => {
   const auth = useAuth();
   const [method, setMethod] = useState('email');
   const [error, setError] = useState(false);
+  const [alert1, setAlert] = useState('');
 
   const [formData, setData] = useState({
     email: "",
     password: ""
   })
 
+  //initial value and validation
   const formik = useFormik({
     initialValues: {
       email: 'demo@devias.io',
@@ -67,6 +71,7 @@ const Page = () => {
     }
   });
 
+  //login button 's callback function
   const handleLogin=async()=>{
     // let err = false;
     // users.map((user,index)=>{
@@ -98,8 +103,17 @@ const Page = () => {
       }
     catch(err) {
         if(!err) setError(true);
+        let dd='';
+          if(err.data.errors.errors!=null&&err.data.errors.errors!='')
+           {dd = err.data.errors.errors[0].msg.toString(); console.log(dd)}
+           else dd=err.data.errors.toString();
+           console.log(dd)
+          setAlert(dd);
       };
   }
+  
+
+  //function called if input value 'such as email and password' changed
 
   const handleChange = (e) => setData({
     ...formData,
@@ -181,6 +195,8 @@ const Page = () => {
                 onSubmit={formik.handleSubmit}
               >
                 <Stack spacing={3}>
+                {(alert1!='') ?<Alert severity="error"> {alert1}</Alert>:''}
+
                   <TextField
                     error={!!(formik.touched.email && formik.errors.email)}
                     fullWidth
@@ -248,6 +264,7 @@ const Page = () => {
   );
 };
 
+//get layout of page
 Page.getLayout = (page) => (
   <AuthLayout>
     {page}

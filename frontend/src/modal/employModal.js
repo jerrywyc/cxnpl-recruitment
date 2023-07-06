@@ -6,6 +6,9 @@ import { addEmployees } from 'src/redux/action/information';
 import { BACKEND_URL } from 'src/Constant';
 import axios from 'axios';
 
+
+//customer modal companent
+
 const EmployeeModal = () =>{
   const dispatch = useDispatch();
   const [alert, setAlert] = useState("");
@@ -24,6 +27,7 @@ const EmployeeModal = () =>{
     setFormValues(employee);
   }, [employee])
 
+  //update employee 's data : admin and manager can do
   const handleUpdate=async()=>{
         // axios.put(`${process.env.SERVER_URL}/api/users/${formValues.id}`)
     //   .then((res) => {
@@ -50,6 +54,7 @@ const EmployeeModal = () =>{
     };
   }
 
+  //change input value
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues((prevValues) => ({
@@ -90,14 +95,17 @@ const EmployeeModal = () =>{
             fullWidth
             margin="normal"
           />
-          <TextField
-            name="gender"
-            label="Gender"
-            value={formValues.gender}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-          />
+          <InputLabel>Gender</InputLabel> 
+          <FormControl fullWidth margin="small">
+            <Select   
+              name="gender"
+              value={formValues.gender}
+              onChange={handleChange}
+            >
+              <MenuItem value="Male">Male</MenuItem>
+              <MenuItem value="Female">Female</MenuItem>
+            </Select>
+          </FormControl>
        
           <TextField
             name="email"
@@ -107,8 +115,8 @@ const EmployeeModal = () =>{
             fullWidth
             margin="normal"
           />
+          <InputLabel>Role</InputLabel>
           <FormControl fullWidth margin="normal">
-            <InputLabel>Role</InputLabel>
             <Select
               name="role"
               value={formValues.role}

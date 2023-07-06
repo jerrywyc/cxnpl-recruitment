@@ -16,6 +16,8 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CompanyCard } from 'src/sections/companies/company-card';
 import { CompaniesSearch } from 'src/sections/companies/companies-search';
 
+
+//initial companies
 const companies = [
   {
     id: '2569ce0d517a7f06d3ea1f24',
@@ -66,6 +68,9 @@ const companies = [
     downloads: '835'
   }
 ];
+
+
+//company component
 
 const Page = () => (
   <>
@@ -165,6 +170,8 @@ const Page = () => (
   </>
 );
 
+
+//get layout of page
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}

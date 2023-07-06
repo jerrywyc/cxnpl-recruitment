@@ -23,6 +23,8 @@ import { addCustomers ,deleteCustomer} from 'src/redux/action/information';
 import axios from 'axios';
 import { BACKEND_URL } from 'src/Constant';
 
+
+//customer table 's component
 export const CustomersTable = (props) => {
   const {
     count = 0,
@@ -54,6 +56,8 @@ export const CustomersTable = (props) => {
     
     dispatch(updateCustomer(modal));
   }
+
+  //delete customer : only admin
   const deleteHandle=async(index)=>{
     // axios.delete(`${process.env.SERVER_URL}/api/customers/${index}`)
     //   .then((res) => {
@@ -211,7 +215,7 @@ export const CustomersTable = (props) => {
           </Table>
         </Box>
       </Scrollbar>
-      <TablePagination
+      {/* <TablePagination
         component="div"
         count={count}
         onPageChange={onPageChange}
@@ -219,7 +223,7 @@ export const CustomersTable = (props) => {
         page={page}
         rowsPerPage={rowsPerPage}
         rowsPerPageOptions={[5, 10, 25]}
-      />
+      /> */}
     </Card>
   );
 };

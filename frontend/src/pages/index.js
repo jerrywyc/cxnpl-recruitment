@@ -16,10 +16,15 @@ import { useRouter } from 'next/navigation';
 
 const now = new Date();
 
+//dashboard component
 const Page = () => {
   const router = useRouter();
+
+  //get logined user's information
   let MyInfor = JSON.parse(localStorage.getItem("user"));
   const {Alerts} = useSelector(state=>state);
+  
+  //if you don't login, go to login page.
   useEffect(()=>{
     let user = localStorage.getItem('user');
      if(user=="null"||!user) {
@@ -34,7 +39,7 @@ const Page = () => {
       </title>
     </Head>
     {console.log(Alerts)}
-    <Alert severity="error">{Alerts.error}</Alert>
+    {Alerts.error != ''? <Alert severity="error">{Alerts.error}</Alert>:''}
     <Box
       component="main"
       sx={{
@@ -48,9 +53,11 @@ const Page = () => {
         sx={{
           display: 'inline-flex',
           marginLeft: `50px`,
+          marginBottom: '10px'
         }}
       >
-        {MyInfor.company} 
+        Microsoft
+        {/* {MyInfor.company}  */}
       </Typography>:''}
     
       <Container maxWidth="xl">
@@ -251,6 +258,8 @@ const Page = () => {
   );
 };
 
+
+//get layout of page
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}

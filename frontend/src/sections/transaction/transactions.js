@@ -141,7 +141,7 @@ export const TransactionsTable = (props) => {
                       {Transaction.type}
                     </TableCell>
                     <TableCell>
-                      {Transaction.amount}
+                      {'$'+Transaction.amount}
                     </TableCell>
                     
                     <TableCell
@@ -205,7 +205,7 @@ export const TransactionsTable = (props) => {
           </Table>
         </Box>
       </Scrollbar>
-      <TablePagination
+      {/* <TablePagination
         component="div"
         count={count}
         onPageChange={onPageChange}
@@ -213,7 +213,7 @@ export const TransactionsTable = (props) => {
         page={page}
         rowsPerPage={rowsPerPage}
         rowsPerPageOptions={[5, 10, 25]}
-      />
+      /> */}
     </Card>
   );
 };
