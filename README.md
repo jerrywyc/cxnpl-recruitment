@@ -1,6 +1,8 @@
-# Introduction
-This web application has 3 different levels of access controls for normal users, managers and admins, they will have increasing levels of priviledge in that order. 
+# Introduction and Scope
+Thie web application has 3 different levels of access controls for normal users, managers and admins, they will have increasing levels of priviledge in that order. 
 Based on their roles, users will be able to perform CRUD actions on banking transactions and  customer's personal information.
+
+The purpose of this project is to develop a Simple Identity Management System. The system will provide basic functionalities for managing user identities, including user registration, login, and profile management.
 
 # System Overview
 
@@ -27,6 +29,8 @@ In my IM Service project, I strived to create a comprehensive solution that cate
 However, as time was a constraint this limited the scope of my project, and I ended up focusing on only delivering the core feature (RBAC). 
 
 The current implementation of the user interface was intentionally restricted to demonstrate specific actions. As such, there are opportunities for improvement in terms of UI design and functionality.
+
+That being said, although desirable, the system did not support third-party authentication methods (e.g., OAuth) nor include advanced security features like two-factor authentication or password recovery.
 
 # Areas of Improvement 
 While the project covers role definitions, restricted actions based on a user's role, admittedly the RBAC could be more granular. In banking, permissions to certain resources change often and the functionality to toggle permissions and/or granting them for a certain time period would be beneficial for larger organisations as well. An example of this would be contractor accounts or service accounts that teams would use specifically for one function. 
