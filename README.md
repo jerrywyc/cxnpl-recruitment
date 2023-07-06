@@ -52,7 +52,7 @@ SME (small-medium enterprise) banking has business’ sign up for accounts (not 
 
 Design and implement an IM system & API to manage users and their permissions. The system should allow a user to login and access some resource based on their permissions.
 
-### Install Instructions
+# Install Instructions
 Please make sure MongoDB and Node.js ins installed.
 
 In a terminal, navigate to the:
@@ -71,8 +71,9 @@ Next, create the user and select the role that you want assigned.
 
 Login.
  
-### API Documentation
+# API Documentation
 The swagger UI page can be accessed at "http://localhost:5000/api-docs/"
+
 
 ### What we Expect
 The task is purposely left open-ended. You are **not** expected to built a fully functional IM service that caters for the variety of requirements in SME banking. Define your own scope to best showcase your abilities - determine which requirements can be built/fulfilled in the time you are given to complete this assignment. Include this scope and reasoning behind it in your submission in the README file.
