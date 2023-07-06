@@ -1,3 +1,13 @@
+# Identity Management (IM) Service - BE
+Given the increased scrutiny on cyber-security, and upcoming regulatory crackdown, we’d rather not leak our user’s data.
+
+SME (small-medium enterprise) banking has business’ sign up for accounts (not just individuals). Depending on SME size they may need different levels of access control, such as:
+* Small SMEs (e.g. sole traders) may just need one user
+* Moderate size may need 2-5 users
+* The largest may need features such as SSO, MFA, password policies, external identity provider, integration, etc.
+
+Design and implement an IM system & API to manage users and their permissions. The system should allow a user to login and access some resource based on their permissions.
+
 # Introduction and Scope
 Thie web application has 3 different levels of access controls for normal users, managers and admins, they will have increasing levels of priviledge in that order. 
 Based on their roles, users will be able to perform CRUD actions on banking transactions and  customer's personal information.
@@ -83,12 +93,3 @@ password: 123456
 The swagger UI page can be accessed at "http://localhost:5000/api-docs/"
 
 
-# Identity Management (IM) Service - BE
-Given the increased scrutiny on cyber-security, and upcoming regulatory crackdown, we’d rather not leak our user’s data.
-
-SME (small-medium enterprise) banking has business’ sign up for accounts (not just individuals). Depending on SME size they may need different levels of access control, such as:
-* Small SMEs (e.g. sole traders) may just need one user
-* Moderate size may need 2-5 users
-* The largest may need features such as SSO, MFA, password policies, external identity provider, integration, etc.
-
-Design and implement an IM system & API to manage users and their permissions. The system should allow a user to login and access some resource based on their permissions.
