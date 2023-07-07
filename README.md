@@ -72,21 +72,7 @@ run the command 'npm run dev'
 
 you will then be able to view the login page at localhost:3000
 
-Next, create the user and select the role that you want assigned.
-
-Default users have been setup to test the permissions of each role:
-
-admin: 
-email: admin@example.com 
-password: 123456
-
-manager: 
-email: manager@example.com 
-password: 123456
-
-normal: 
-email: normal@example.com 
-password: 123456
+Next, create a company first, before creating a user with the user and select the role that you want assigned.
 
  
 # API Documentation
